@@ -1,7 +1,7 @@
 {
   "name": "cognito-jwt-verifier",
   "version": "1.0.0",
-  "description": "Verifies and decodes an AWS cognito JWT token.",
+  "description": "Verifies and decodes an AWS Cognito JWT token.",
   "main": "src/verifyCognitoJwt.js",
   "scripts": {
     "test": "jest"
