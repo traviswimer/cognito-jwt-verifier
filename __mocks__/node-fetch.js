@@ -1,6 +1,6 @@
-module.exports = async function fetch(url) {
+module.exports.default = async function fetch(url) {
 	return {
-		json: () => {
+		json: async () => {
 			return {
 				keys: [
 					{

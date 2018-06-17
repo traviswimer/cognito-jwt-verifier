@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+const fetch = require('node-fetch').default;
 const jwt = require('jsonwebtoken');
 
 module.exports = class KeyManager {
@@ -12,12 +12,12 @@ module.exports = class KeyManager {
 	}
 
 	async fetchAndCacheKey({key_id, keys_url}) {
-		let keys = await fetch(keys_url).then(res => res.json().keys);
+		let keys = await fetch(keys_url).then(res => res.json()).then(json => json.keys);
 		let found_jwk = keys.find(key => key.kid === key_id);
 		if (found_jwk) {
 			this.key_cache[key_id] = found_jwk;
 			return found_jwk;
-		}else{
+		} else {
 			throw 'Key ID not found at the provided URL.'
 		}
 	}
