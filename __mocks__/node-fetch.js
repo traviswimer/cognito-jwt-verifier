@@ -4,12 +4,13 @@ module.exports.default = async function fetch(url) {
 			return {
 				keys: [
 					{
-						kid: 'aKeyIdThatExists'
-					}, {
-						kid: 'anotherKeyIdThatExists'
-					}
-				]
-			}
-		}
-	}
-}
+						kid: "aKeyIdThatExists",
+					},
+					{
+						kid: "anotherKeyIdThatExists",
+					},
+				],
+			};
+		},
+	};
+};

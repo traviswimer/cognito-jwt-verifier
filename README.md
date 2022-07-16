@@ -10,8 +10,8 @@
 
 ## Usage
 
-
 **Simple example:**
+
 ```Javascript
 const CognitoJwtVerifier = require("cognito-jwt-verifier");
 let verifier = new CognitoJwtVerifier();
@@ -36,6 +36,7 @@ This package is based on information from the following AWS documention:
 [https://aws.amazon.com/premiumsupport/knowledge-center/decode-verify-cognito-json-token/](https://aws.amazon.com/premiumsupport/knowledge-center/decode-verify-cognito-json-token/)
 
 It performs the following tasks:
+
 1. Reads the `kid`(key ID) from the token header, and uses it to retrieve the correct public key from AWS.
 2. Uses the public key and the token to verify the token signature, using [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken).
 3. Checks that the token expiry timestamp is still a time in the future.
@@ -47,13 +48,13 @@ It performs the following tasks:
 
 ### CognitoJwtVerifier
 
-
 #### verifyToken({ token, aws_region, userpool_id, userpool_client_id })
 
-* _token_ (string) - The AWS Cognito token to be verified.
-* _aws_region_ (string) - The AWS region the userpool is located in.
-* _userpool_id_ (string) - The ID of the userpool to be verified against.
-* _userpool_client_id_ (string) - The ID of the userpool client to be verified against.
+- _token_ (string) - The AWS Cognito token to be verified.
+- _aws_region_ (string) - The AWS region the userpool is located in.
+- _userpool_id_ (string) - The ID of the userpool to be verified against.
+- _userpool_client_id_ (string) - The ID of the userpool client to be verified against.
 
 **returns a promise:**
-* Resolves with: (Object) The decoded JWT token.
+
+- Resolves with: (Object) The decoded JWT token.
