@@ -1,9 +1,7 @@
-const fs = require("fs");
-const jwt = require("jsonwebtoken");
-const CognitoJwtVerifier = require("./CognitoJwtVerifier");
+import CognitoJwtVerifier from "./CognitoJwtVerifier";
 
 describe("CognitoJwtVerifier()", () => {
-	var verifier;
+	var verifier: CognitoJwtVerifier;
 	beforeEach(() => {
 		jest.mock("./KeyManager");
 		verifier = new CognitoJwtVerifier();
@@ -13,21 +11,36 @@ describe("CognitoJwtVerifier()", () => {
 			let token = "token";
 			let aws_region = "aws_region";
 			let userpool_id = "userpool_id";
-			let userpool_client_id = "userpool_client_id";
 			await verifier
-				.verifyToken({})
-				.catch((e) => expect(e).toMatch('"token" parameter is required.'));
+				.verifyToken(
+					// @ts-ignore: This is testing an invalid parameter
+					{}
+				)
+				.catch((e: Error) =>
+					expect(e).toMatch('"token" parameter is required.')
+				);
 			await verifier
-				.verifyToken({ token })
-				.catch((e) => expect(e).toMatch('"aws_region" parameter is required.'));
+				.verifyToken(
+					// @ts-ignore: This is testing an invalid parameter
+					{ token }
+				)
+				.catch((e: Error) =>
+					expect(e).toMatch('"aws_region" parameter is required.')
+				);
 			await verifier
-				.verifyToken({ token, aws_region })
-				.catch((e) =>
+				.verifyToken(
+					// @ts-ignore: This is testing an invalid parameter
+					{ token, aws_region }
+				)
+				.catch((e: Error) =>
 					expect(e).toMatch('"userpool_id" parameter is required.')
 				);
 			return verifier
-				.verifyToken({ token, aws_region, userpool_id })
-				.catch((e) =>
+				.verifyToken(
+					// @ts-ignore: This is testing an invalid parameter
+					{ token, aws_region, userpool_id }
+				)
+				.catch((e: Error) =>
 					expect(e).toMatch('"userpool_client_id" parameter is required.')
 				);
 		});

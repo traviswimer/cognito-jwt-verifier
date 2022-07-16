@@ -1,8 +1,8 @@
-const KeyManager = require("./KeyManager");
+import KeyManager from "./KeyManager";
 
-var key_manager;
-var aws_region;
-var userpool_id;
+var key_manager: KeyManager;
+var aws_region: string;
+var userpool_id: string;
 
 describe("KeyManager", () => {
 	beforeEach(() => {
@@ -27,7 +27,7 @@ describe("KeyManager", () => {
 			let key_id = "nonexistentKey";
 			return key_manager
 				.getKey({ key_id, aws_region, userpool_id })
-				.catch((e) =>
+				.catch((e: Error) =>
 					expect(e).toMatch("Key ID not found at the provided URL.")
 				);
 		});

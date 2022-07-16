@@ -1,4 +1,4 @@
-module.exports.default = async function fetch(url) {
+export default async function fetch(url: string) {
 	return {
 		json: async () => {
 			return {
@@ -13,4 +13,4 @@ module.exports.default = async function fetch(url) {
 			};
 		},
 	};
-};
+}
