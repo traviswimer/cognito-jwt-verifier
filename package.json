@@ -4,7 +4,8 @@
   "description": "Verifies and decodes an AWS Cognito JWT token.",
   "main": "src/CognitoJwtVerifier.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "ci_test": "jest --coverage --ci"
   },
   "keywords": [
     "cognito",
