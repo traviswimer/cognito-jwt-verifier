@@ -4,17 +4,17 @@
 
 ## Installation
 
-`npm install --save cognito-jwt-verifier`
-
 `yarn add cognito-jwt-verifier`
+
+`npm install cognito-jwt-verifier`
 
 ## Usage
 
 **Simple example:**
 
 ```Javascript
-const CognitoJwtVerifier = require("cognito-jwt-verifier");
-let verifier = new CognitoJwtVerifier();
+import CognitoJwtVerifier from "cognito-jwt-verifier";
+const verifier = new CognitoJwtVerifier();
 
 verifier.verifyToken({
 	token: 'AwsCognitoToken',
@@ -32,7 +32,7 @@ verifier.verifyToken({
 
 ## What it does
 
-This package is based on information from the following AWS documention:
+This package is based on information from the following AWS documentation:
 [https://aws.amazon.com/premiumsupport/knowledge-center/decode-verify-cognito-json-token/](https://aws.amazon.com/premiumsupport/knowledge-center/decode-verify-cognito-json-token/)
 
 It performs the following tasks:
@@ -58,3 +58,22 @@ It performs the following tasks:
 **returns a promise:**
 
 - Resolves with: (Object) The decoded JWT token.
+
+## Project Links
+
+- [NPM](https://www.npmjs.com/package/cognito-jwt-verifier)
+- [GitHub](https://github.com/traviswimer/cognito-jwt-verifier)
+
+## Author
+
+#### Travis Wimer
+
+- <a href="https://traviswimer.com/developer-portfolio" title="React Native, React, NodeJS, UI/UX Developer" target="_blank">Developer Portfolio</a>
+- <a href="https://traviswimer.com/blog" title="React Native, React, NodeJS, UI/UX Blog" target="_blank">Blog</a>
+- <a href="https://www.linkedin.com/in/traviswimer/" title="Developer Resume" target="_blank">LinkedIn</a>
+- <a href="https://twitter.com/Travis_Wimer" title="Travis Wimer | Software Developer" target="_blank">Twitter</a>
+- <a href="https://traviswimer.com/developer-portfolio/cognito-jwt-verifier" title="cognito-jwt-verifier | Travis Wimer" target="_blank">cognito-jwt-verifier Portfolio Page</a>
+
+## License
+
+MIT. Copyright © 2022 Travis Wimer
