@@ -1,6 +1,11 @@
 # cognito-jwt-verifier
 
 > Verifies and decodes an AWS Cognito JWT token.
+>
+> **Warning**
+> AWS now supports their own library for this purpose. You likely want to use it instead:
+>
+> [aws-jwt-verify](https://www.npmjs.com/package/aws-jwt-verify)
 
 ## Installation
 
