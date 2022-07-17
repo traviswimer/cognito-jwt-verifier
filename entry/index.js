@@ -1,1 +1,2 @@
-export * from "../dist/CognitoJwtVerifier.js";
+import CognitoJwtVerifier from "../dist/CognitoJwtVerifier.js";
+export default CognitoJwtVerifier;
